@@ -1,0 +1,25 @@
+
+enum LoginType{
+    LOGIN_PASSWORD = 0;
+    LOGIN_SNDA_PF = 1;
+    LOGIN_QQ_PF = 2;
+    LGOIN_WECHAT_PF = 3;
+    LOGIN_IOS_GUEST = 4;
+    LOGIN_IOS_AUDIT = 5;
+}
+
+enum PlatType{
+    PLAT_IOS = 0;
+    PLAT_ANDROID = 1;
+}
+
+message QueryGateArg{
+    optional string token = 1;
+    optional string account = 2;
+    optional string password = 3;
+    optional LoginType type = 4;
+    optional string pf = 5;
+    optional string openid = 6;
+    optional PlatType platid = 7;
+    optional string version = 8;
+}
