@@ -2,13 +2,14 @@
 
 function foo(a)
     print("foo", a)
-    coroutine.yield(2 * a)
+    coroutine.yield(2 * a, 10)
     print("foo end")
+    return a
 end
 
 co = coroutine.create(function(a, b)
     print("co-body", a, b)
-    local r = foo(a + 1)
+    local r = foo(a + 2)
     print("co-body", r)
     --local r, s = coroutine.yield(a + b, a - b)
     --print("co-body", r, s)
